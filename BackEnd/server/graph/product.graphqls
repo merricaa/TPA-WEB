@@ -1,0 +1,65 @@
+# scalar Map
+# scalar Time
+type Product {
+  id: ID!
+  originalProduct: Product @goField(forceResolver: true)
+  updatedProducts: [Product!]! @goField(forceResolver: true)
+  name: String!
+  images: [ProductImage!]! @goField(forceResolver: true)
+  description: String!
+  price: Int!
+  stock: Int!
+  #   metadata: Map!
+  metadata: String!
+  createdAt: Time!
+  validTo: Time
+  category: Category! @goField(forceResolver: true)
+  shop: Shop! @goField(forceResolver: true)
+
+  transactionDetails: [TransactionDetail!]! @goField(forceResolver: true)
+
+  reviews: [Review!]! @goField(forceResolver: true)
+  discussions: [Discussion!]! @goField(forceResolver: true)
+}
+
+type ProductImage {
+  id: ID!
+  image: String!
+  product: Product! @goField(forceResolver: true)
+}
+
+type Category {
+  id: ID!
+  name: String!
+  products: [Product!]! @goField(forceResolver: true)
+}
+
+extend type Query {
+  category(id: ID!): Category!
+  categories(limit: Int): [Category!]!
+  product(id: ID!): Product!
+  products(
+    shopID: ID
+    limit: Int
+    offset: Int
+    input: SearchProduct
+    topSold: Boolean
+  ): [Product!]!
+}
+
+extend type Mutation {
+  createProduct(input: NewProduct!, shopID: ID!): Product!
+  createProductImage(image: String!, productID: ID!): ProductImage!
+  createProductImages(images: [String!]!, productID: ID!): Boolean!
+
+  updateProduct(input: NewProduct!, lastUpdateID: ID): Product!
+}
+
+input NewProduct {
+  name: String!
+  description: String!
+  price: Int!
+  metadata: String!
+  stock: Int!
+  categoryID: ID!
+}

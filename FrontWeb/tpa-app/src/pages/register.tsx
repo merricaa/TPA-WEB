@@ -15,27 +15,6 @@ const query = `mutation($name:String!, $email:String!, $phone:String!, $password
   }
 }`;
 
-const variables = {
-  name: 'erika',
-  email: 'erika@gmail.com',
-  phone: '087888707271',
-  password: 'erika123',
-  banned: false,
-};
-axios
-  .post('/http://localhost:8080/#', {
-    query,
-    variables: variables,
-  })
-  .then((response) => {
-    console.log(response.data);
-  })
-  .catch((error) => {
-    console.log(error);
-    console.log(variables);
-    console.log('test');
-  });
-
 export default function register() {
   const [formValues, setFormValues] = useState({
     firstName: '',
@@ -103,17 +82,50 @@ export default function register() {
       )
     ) {
       setErrorMessage(
-        'Password must contain at least 1 special character, uppercase and lowercase, number',
+        'Password must contain at least 1 special character, uppercase and lowercase and number',
       );
     } else {
       console.log('Test');
       setErrorMessage('');
+      window.location.href = '/';
+
+      const variables = {
+        name:
+          (document.getElementById('first') as HTMLInputElement).value.trim() +
+          ' ' +
+          (document.getElementById('last') as HTMLInputElement).value.trim(),
+        email: (
+          document.getElementById('email') as HTMLInputElement
+        ).value.trim(),
+        phone: (
+          document.getElementById('phone') as HTMLInputElement
+        ).value.trim(),
+        password: (document.getElementById('password') as HTMLInputElement)
+          .value,
+        banned: false,
+        role: 'USER',
+      };
+
+      axios
+        .post('http://localhost:8080/query', {
+          query: query,
+          variables: variables,
+        })
+        .then((response) => {
+          console.log(response.data);
+        })
+        .catch((error) => {
+          console.log(error);
+
+          console.log('test');
+        });
     }
   };
 
   return (
     <div className={styles.container1}>
       <div className={styles.registerform}>
+        <img src="/logo.svg" alt="" className={styles.logo} />
         <h1 className={styles.title}>Register</h1>
         <input
           type="text"

@@ -19,6 +19,7 @@
   background-color: #F0EEED;
   row-gap: 20px;
   outline-style: none;
+  padding: 50px;
 }
 
 #signInBtn{
@@ -78,6 +79,7 @@
   background-color: #F0EEED;
   row-gap: 20px;
   outline-style: none;
+  padding: 50px
 }
 
 .firstName{
@@ -142,12 +144,124 @@
   color: black;
 }
 
+/* home page  */
+
 .container{
-  height: 50px;
+  height: 100vh;
+  background-color: #F0EEED;;
+
 }
 
 .navbar{
-  width: 599px;
-
-  padding: 15px 2px;
+  position: relative;
+  width: 100%;
+  padding: 15px 30px;
+  height: auto;
+  line-height: 60px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
 }
+
+
+/* Nav logo  */
+
+.logo{
+  height: 70px;
+}
+
+.logoNav{
+  height: 45px;
+
+}
+
+.searchIcon{
+  height: 30px;
+}
+
+.hamMenu{
+  height: 30px;
+}
+
+.location{
+  height: 30px;
+}
+
+.uk{
+  height: 40px;
+}
+
+.singInLink{
+  color: black;
+}
+
+.homeSignIn{
+  border-radius: 30px;
+  padding: 5px 10px;
+}
+
+.searchBar{
+  padding: 0px 40px 0px 15px;
+  border-radius: 20px;
+  height: 40px;
+  width: 300px;
+}
+
+.deliver{
+  color: black;
+  text-decoration: none
+}
+
+.return{
+  color: black;
+}
+
+/* carousel
+ */
+
+ .homeCarouselContainer{
+  margin: 0px 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+ }
+
+ .selectedImage{
+    width: 100%;
+    height: 30vw;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+ }
+
+ .bannerBtn{
+    border-radius: 8px;
+    padding: 3px;
+    width: 5vw;
+    min-width: fit-content;
+ }
+
+ /* .rightButton{
+    border-radius: 8px;
+    padding: 3px;
+    width: 5vw;
+    min-width: fit-content;
+
+    /* margin-left:-60px;
+    z-index:100;
+
+  }
+  .leftButton{
+    border-radius: 8px;
+    padding: 3px;
+    width: 5vw;
+    min-width: fit-content;
+    position:relative;
+    margin-right:-60px;
+    z-index:100;
+  } */
+
+

@@ -8,6 +8,7 @@ import (
 	"github.com/99designs/gqlgen/graphql/handler"
 	"github.com/99designs/gqlgen/graphql/playground"
 	"github.com/gorilla/mux"
+	"github.com/rs/cors"
 
 	"github.com/jxsr12/oldegg/config"
 	"github.com/jxsr12/oldegg/directives"
@@ -19,6 +20,7 @@ import (
 const defaultPort = "8080"
 
 func main() {
+
 	// dsn := "host=localhost user=postgres password=admin dbname=tpaweb port=5432 sslmode=disable TimeZone=Asia/Shanghai"
 
 	port := os.Getenv("PORT")
@@ -34,6 +36,12 @@ func main() {
 	router := mux.NewRouter()
 
 	router.Use(middlewares.AuthMiddleware)
+	router.Use(cors.New(cors.Options{
+		AllowedHeaders:   []string{"*"},
+		AllowedOrigins:   []string{"http://localhost:3001", "http://localhost:8080"},
+		AllowCredentials: true,
+		Debug:            true,
+	}).Handler)
 
 	c := graph.Config{Resolvers: &graph.Resolver{}}
 	c.Directives.Auth = directives.Auth

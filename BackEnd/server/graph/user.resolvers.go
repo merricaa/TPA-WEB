@@ -7,10 +7,9 @@ package graph
 import (
 	"context"
 
+	"github.com/google/uuid"
 	"github.com/jxsr12/oldegg/config"
 	"github.com/jxsr12/oldegg/graph/model"
-
-	"github.com/google/uuid"
 	"github.com/jxsr12/oldegg/service"
 )
 

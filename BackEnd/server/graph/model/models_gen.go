@@ -13,6 +13,21 @@ type AuthOps struct {
 	Register interface{} `json:"register"`
 }
 
+type Category struct {
+	ID       string     `json:"id"`
+	Name     string     `json:"name"`
+	Products []*Product `json:"products"`
+}
+
+type NewProduct struct {
+	Name        string `json:"name"`
+	Description string `json:"description"`
+	Price       int    `json:"price"`
+	Stock       int    `json:"stock"`
+	CategoryID  string `json:"categoryID"`
+	Image       string `json:"image"`
+}
+
 type NewUser struct {
 	Name     string   `json:"name"`
 	Email    string   `json:"email"`
@@ -20,6 +35,16 @@ type NewUser struct {
 	Password string   `json:"password"`
 	Banned   bool     `json:"banned"`
 	Role     UserRole `json:"role"`
+}
+
+type SearchProduct struct {
+	Keyword        *string `json:"keyword"`
+	MinPrice       *int    `json:"minPrice"`
+	MaxPrice       *int    `json:"maxPrice"`
+	OrderBy        *string `json:"orderBy"`
+	CategoryID     *string `json:"categoryID"`
+	CreatedAtRange *int    `json:"createdAtRange"`
+	HighRating     *bool   `json:"highRating"`
 }
 
 type UserRole string

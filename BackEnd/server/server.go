@@ -32,13 +32,14 @@ func main() {
 
 	//Migrate table2 dari Model yang ada
 	db.AutoMigrate(&model.User{})
+	db.AutoMigrate(&model.Product{})
 
 	router := mux.NewRouter()
 
 	router.Use(middlewares.AuthMiddleware)
 	router.Use(cors.New(cors.Options{
 		AllowedHeaders:   []string{"*"},
-		AllowedOrigins:   []string{"http://localhost:3001", "http://localhost:8080"},
+		AllowedOrigins:   []string{"http://localhost:3000", "http://localhost:8080"},
 		AllowCredentials: true,
 		Debug:            true,
 	}).Handler)

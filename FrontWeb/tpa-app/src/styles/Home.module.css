@@ -160,6 +160,7 @@
   line-height: 60px;
   margin: auto;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   background-color: white;
@@ -169,40 +170,49 @@
 /* Nav logo  */
 
 .logo{
+  display: flex;
   height: 70px;
 }
 
 .logoNav{
+  display: flex;
   height: 45px;
 
 }
 
 .searchIcon{
+  display: flex;
   height: 30px;
 }
 
 .hamMenu{
+  display: flex;
   height: 30px;
 }
 
 .location{
+  display: flex;
   height: 30px;
 }
 
 .uk{
+  display: flex;
   height: 40px;
 }
 
 .singInLink{
+  display: flex;
   color: black;
 }
 
 .homeSignIn{
+  display: flex;
   border-radius: 30px;
   padding: 5px 10px;
 }
 
 .searchBar{
+  display: flex;
   padding: 0px 40px 0px 15px;
   border-radius: 20px;
   height: 40px;
@@ -210,11 +220,13 @@
 }
 
 .deliver{
+  display: flex;
   color: black;
   text-decoration: none
 }
 
 .return{
+  display: flex;
   color: black;
 }
 
@@ -222,6 +234,7 @@
  */
 
  .homeCarouselContainer{
+  padding: 10px;
   margin: 0px 0;
   width: 100%;
   display: flex;
@@ -263,5 +276,58 @@
     margin-right:-60px;
     z-index:100;
   } */
+
+  /* card product */
+
+  .productName{
+    color: black;
+  }
+
+  .price{
+    color: black;
+    font-weight: 600;
+  }
+
+  .card {
+    height: 320px;
+    width: 250px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+  }
+
+  .productImage{
+    width: 100%;
+  }
+
+  .productName{
+    font-size: 10px;
+  }
+
+  .cardContainer{
+    background-color: white;
+    margin-top: 5vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    row-gap: 2vh;
+    column-gap: 2vw;
+  }
+
+  .toCart{
+    background-color: rgb(238, 149, 5);
+    border: 1px solid rgb(199, 125, 6);
+    margin-bottom: 20%;
+    padding: 1vw 2vw;
+    border-radius: 10px;
+  }
 
 

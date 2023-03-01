@@ -2,6 +2,16 @@ import styles from '@/styles/Home.module.css';
 import axios from 'axios';
 import { useState } from 'react';
 import { setCookies } from 'cookies-next';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+
+
+
+// const router = createBrowserRouter([
+//   {
+//     path: '/productDetail/:id',
+//     element: <productDetail/>,
+//   },
+// ]);
 
 export default function login() {
   const [errorMessage, setErrorMessage] = useState('');
@@ -11,11 +21,6 @@ export default function login() {
     }
   }`;
   const handleLogin = () => {
-    // const [formValues, setFormValues] = useState({
-    //   email: '',
-    //   password: '',
-    // });
-
     const variables = {
       email: (
         document.getElementById('email') as HTMLInputElement
@@ -44,7 +49,7 @@ export default function login() {
       .catch((error) => {
         console.log(error);
         // console.log(variables);
-        // console.log('test');
+        console.log('test');
       });
   };
   return (

@@ -80,10 +80,12 @@ func (r *queryResolver) Categories(ctx context.Context, limit *int) ([]*model.Ca
 
 // Product is the resolver for the product field.
 func (r *queryResolver) Product(ctx context.Context, id string) (*model.Product, error) {
+	var db = config.GetDB()
+
 	product := new(model.Product)
 
 	// return product, r.DB.First(product, "original_product_id = ? AND (valid_to = '"+os.Getenv("MIN_DATE")+"' OR valid_to IS NULL)", id).Error
-	return product, r.DB.Where("original_product_id = ?", id).Order("valid_to ASC").Limit(1).Find(&product).Error
+	return product, db.Where("id = ?", id).Limit(1).Find(product).Error
 }
 
 // Products is the resolver for the products field.

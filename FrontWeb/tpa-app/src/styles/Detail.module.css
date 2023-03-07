@@ -1,0 +1,42 @@
+.container{
+  background-color: white;
+  height: 100vw;
+
+
+}
+
+
+
+.div1{
+background-color: brown;
+float: left;
+width: 33.3%;
+
+
+}
+.div2{
+background-color: blueviolet;
+margin: 0;
+width: 33.3%;
+
+}
+.div3{
+
+  background-color: cadetblue;
+  float: right;
+  width: 33.3%;
+
+
+
+}
+
+.productName{
+  color: black;
+}
+.productImage{
+
+  width: 80%;
+}
+.productPrice{
+  color: black;
+}

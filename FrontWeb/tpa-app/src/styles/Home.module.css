@@ -211,6 +211,19 @@
   padding: 5px 10px;
 }
 
+.userName{
+  margin-top: 0%;
+  color: black;
+}
+.profileName{
+  display: flex;
+  flex-direction: column;
+}
+.profileBTN{
+  /* height: 5px; */
+  /* width: 20px; */
+  border-radius: 10px;
+}
 .searchBar{
   display: flex;
   padding: 0px 40px 0px 15px;
@@ -329,5 +342,73 @@
     padding: 1vw 2vw;
     border-radius: 10px;
   }
+
+  /* footer  */
+  .footerContainer{
+    display: flex;
+    justify-content: space-evenly;
+    height: auto;
+    flex-wrap: wrap;
+    background-color: #125B50;
+  }
+
+  .footer-col-3 ul li, .footer-col-4 ul li, .container a{
+    text-decoration: none;
+    list-style: none;
+  }
+
+  .footerCol1, .footer-col-2, .footer-col-3, .footer-col-4{
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .logo-1{
+    color: #ffffff;
+    font-family: 'henny penny';
+  }
+
+  .footer-col-1 h3{
+    color: #fff;
+  }
+
+  .footer-col-1  a{
+    color: #97C4B8;
+  }
+
+  .footer-col-2 p{
+    color: #97C4B8;
+  }
+  .footer-col-3 h3{
+    color: #fff;
+  }
+  .footer-col-3 ul li a{
+    color: #97C4B8;
+    transition: all 0.4s ease;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -ms-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+  }
+  .footer-col-4 h3{
+    color: #fff;
+  }
+
+  .footer-col-4 ul li a{
+    color: #97C4B8;
+    transition: all 0.4s ease;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -ms-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+  }
+
+  .footer-col-3 ul li a:hover{
+    color: #FFF;
+  }
+
+  .footer-col-4 ul li :hover{
+    color: #FFF;
+  }
+
 
 

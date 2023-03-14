@@ -31,6 +31,7 @@ input NewUser {
   role: UserRole!
 }
 
+
 type AuthOps {
   login(email: String!, password: String!): Any! @goField(forceResolver: true)
   register(input: NewUser!): Any! @goField(forceResolver: true)
@@ -43,6 +44,6 @@ type Mutation {
 
 type Query {
   user(id: ID!): User! @goField(forceResolver: true) @auth
-
+  getCurrentUser:User!@goField(forceResolver: true) @auth
   protected: String! @goField(forceResolver: true) @auth
 }

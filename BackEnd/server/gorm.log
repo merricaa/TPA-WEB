@@ -1,206 +1,221 @@
 
-2023/03/07 14:54:00 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:34
-[0m[33m[151.304ms] [34;1m[rows:1][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'users' AND table_type = 'BASE TABLE'
+2023/03/14 18:52:55 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:34
+[0m[33m[123.387ms] [34;1m[rows:1][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'users' AND table_type = 'BASE TABLE'
 
-2023/03/07 14:54:00 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:34
-[0m[33m[1.052ms] [34;1m[rows:1][0m SELECT CURRENT_DATABASE()
+2023/03/14 18:52:55 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:34
+[0m[33m[0.657ms] [34;1m[rows:1][0m SELECT CURRENT_DATABASE()
 
-2023/03/07 14:54:00 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:34
-[0m[33m[49.518ms] [34;1m[rows:-][0m SELECT c.column_name, c.is_nullable = 'YES', c.udt_name, c.character_maximum_length, c.numeric_precision, c.numeric_precision_radix, c.numeric_scale, c.datetime_precision, 8 * typlen, c.column_default, pd.description, c.identity_increment FROM information_schema.columns AS c JOIN pg_type AS pgt ON c.udt_name = pgt.typname LEFT JOIN pg_catalog.pg_description as pd ON pd.objsubid = c.ordinal_position AND pd.objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = c.table_name AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = c.table_schema)) where table_catalog = 'oldegg' AND table_schema = CURRENT_SCHEMA() AND table_name = 'users'
+2023/03/14 18:52:55 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:34
+[0m[33m[23.580ms] [34;1m[rows:-][0m SELECT c.column_name, c.is_nullable = 'YES', c.udt_name, c.character_maximum_length, c.numeric_precision, c.numeric_precision_radix, c.numeric_scale, c.datetime_precision, 8 * typlen, c.column_default, pd.description, c.identity_increment FROM information_schema.columns AS c JOIN pg_type AS pgt ON c.udt_name = pgt.typname LEFT JOIN pg_catalog.pg_description as pd ON pd.objsubid = c.ordinal_position AND pd.objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = c.table_name AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = c.table_schema)) where table_catalog = 'oldegg' AND table_schema = CURRENT_SCHEMA() AND table_name = 'users'
 
-2023/03/07 14:54:00 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:34
-[0m[33m[6.316ms] [34;1m[rows:-][0m SELECT * FROM "users" LIMIT 1
+2023/03/14 18:52:55 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:34
+[0m[33m[1.185ms] [34;1m[rows:-][0m SELECT * FROM "users" LIMIT 1
 
-2023/03/07 14:54:00 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:34
-[0m[33m[19.373ms] [34;1m[rows:-][0m SELECT constraint_name FROM information_schema.table_constraints tc JOIN information_schema.constraint_column_usage AS ccu USING (constraint_schema, constraint_name) JOIN information_schema.columns AS c ON c.table_schema = tc.constraint_schema AND tc.table_name = c.table_name AND ccu.column_name = c.column_name WHERE constraint_type IN ('PRIMARY KEY', 'UNIQUE') AND c.table_catalog = 'oldegg' AND c.table_schema = CURRENT_SCHEMA() AND c.table_name = 'users' AND constraint_type = 'UNIQUE'
+2023/03/14 18:52:55 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:34
+[0m[33m[13.557ms] [34;1m[rows:-][0m SELECT constraint_name FROM information_schema.table_constraints tc JOIN information_schema.constraint_column_usage AS ccu USING (constraint_schema, constraint_name) JOIN information_schema.columns AS c ON c.table_schema = tc.constraint_schema AND tc.table_name = c.table_name AND ccu.column_name = c.column_name WHERE constraint_type IN ('PRIMARY KEY', 'UNIQUE') AND c.table_catalog = 'oldegg' AND c.table_schema = CURRENT_SCHEMA() AND c.table_name = 'users' AND constraint_type = 'UNIQUE'
 
-2023/03/07 14:54:00 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:34
-[0m[33m[13.540ms] [34;1m[rows:-][0m SELECT c.column_name, constraint_name, constraint_type FROM information_schema.table_constraints tc JOIN information_schema.constraint_column_usage AS ccu USING (constraint_schema, constraint_name) JOIN information_schema.columns AS c ON c.table_schema = tc.constraint_schema AND tc.table_name = c.table_name AND ccu.column_name = c.column_name WHERE constraint_type IN ('PRIMARY KEY', 'UNIQUE') AND c.table_catalog = 'oldegg' AND c.table_schema = CURRENT_SCHEMA() AND c.table_name = 'users'
+2023/03/14 18:52:55 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:34
+[0m[33m[8.044ms] [34;1m[rows:-][0m SELECT c.column_name, constraint_name, constraint_type FROM information_schema.table_constraints tc JOIN information_schema.constraint_column_usage AS ccu USING (constraint_schema, constraint_name) JOIN information_schema.columns AS c ON c.table_schema = tc.constraint_schema AND tc.table_name = c.table_name AND ccu.column_name = c.column_name WHERE constraint_type IN ('PRIMARY KEY', 'UNIQUE') AND c.table_catalog = 'oldegg' AND c.table_schema = CURRENT_SCHEMA() AND c.table_name = 'users'
 
-2023/03/07 14:54:00 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:34
-[0m[33m[3.099ms] [34;1m[rows:-][0m SELECT a.attname as column_name, format_type(a.atttypid, a.atttypmod) AS data_type
+2023/03/14 18:52:55 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:34
+[0m[33m[1.493ms] [34;1m[rows:-][0m SELECT a.attname as column_name, format_type(a.atttypid, a.atttypmod) AS data_type
 		FROM pg_attribute a JOIN pg_class b ON a.attrelid = b.oid AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA())
 		WHERE a.attnum > 0 -- hide internal columns
 		AND NOT a.attisdropped -- hide deleted columns
 		AND b.relname = 'users'
 
-2023/03/07 14:54:00 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:34
-[0m[33m[3.719ms] [34;1m[rows:0][0m SELECT description FROM pg_catalog.pg_description WHERE objsubid = (SELECT ordinal_position FROM information_schema.columns WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'users' AND column_name = 'id') AND objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = 'users' AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA()))
+2023/03/14 18:52:55 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:34
+[0m[33m[2.744ms] [34;1m[rows:0][0m SELECT description FROM pg_catalog.pg_description WHERE objsubid = (SELECT ordinal_position FROM information_schema.columns WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'users' AND column_name = 'id') AND objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = 'users' AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA()))
 
-2023/03/07 14:54:00 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:34
-[0m[33m[3.719ms] [34;1m[rows:0][0m SELECT description FROM pg_catalog.pg_description WHERE objsubid = (SELECT ordinal_position FROM information_schema.columns WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'users' AND column_name = 'name') AND objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = 'users' AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA()))
+2023/03/14 18:52:55 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:34
+[0m[33m[2.264ms] [34;1m[rows:0][0m SELECT description FROM pg_catalog.pg_description WHERE objsubid = (SELECT ordinal_position FROM information_schema.columns WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'users' AND column_name = 'name') AND objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = 'users' AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA()))
 
-2023/03/07 14:54:00 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:34
-[0m[33m[3.127ms] [34;1m[rows:0][0m SELECT description FROM pg_catalog.pg_description WHERE objsubid = (SELECT ordinal_position FROM information_schema.columns WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'users' AND column_name = 'email') AND objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = 'users' AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA()))
+2023/03/14 18:52:55 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:34
+[0m[33m[1.592ms] [34;1m[rows:0][0m SELECT description FROM pg_catalog.pg_description WHERE objsubid = (SELECT ordinal_position FROM information_schema.columns WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'users' AND column_name = 'email') AND objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = 'users' AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA()))
 
-2023/03/07 14:54:00 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:34
-[0m[33m[2.906ms] [34;1m[rows:0][0m SELECT description FROM pg_catalog.pg_description WHERE objsubid = (SELECT ordinal_position FROM information_schema.columns WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'users' AND column_name = 'phone') AND objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = 'users' AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA()))
+2023/03/14 18:52:55 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:34
+[0m[33m[1.531ms] [34;1m[rows:0][0m SELECT description FROM pg_catalog.pg_description WHERE objsubid = (SELECT ordinal_position FROM information_schema.columns WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'users' AND column_name = 'phone') AND objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = 'users' AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA()))
 
-2023/03/07 14:54:00 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:34
-[0m[33m[4.666ms] [34;1m[rows:0][0m SELECT description FROM pg_catalog.pg_description WHERE objsubid = (SELECT ordinal_position FROM information_schema.columns WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'users' AND column_name = 'password') AND objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = 'users' AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA()))
+2023/03/14 18:52:55 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:34
+[0m[33m[2.046ms] [34;1m[rows:0][0m SELECT description FROM pg_catalog.pg_description WHERE objsubid = (SELECT ordinal_position FROM information_schema.columns WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'users' AND column_name = 'password') AND objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = 'users' AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA()))
 
-2023/03/07 14:54:00 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:34
-[0m[33m[5.002ms] [34;1m[rows:0][0m SELECT description FROM pg_catalog.pg_description WHERE objsubid = (SELECT ordinal_position FROM information_schema.columns WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'users' AND column_name = 'banned') AND objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = 'users' AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA()))
+2023/03/14 18:52:55 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:34
+[0m[33m[2.610ms] [34;1m[rows:0][0m SELECT description FROM pg_catalog.pg_description WHERE objsubid = (SELECT ordinal_position FROM information_schema.columns WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'users' AND column_name = 'banned') AND objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = 'users' AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA()))
 
-2023/03/07 14:54:00 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:34
-[0m[33m[1.551ms] [34;1m[rows:0][0m SELECT description FROM pg_catalog.pg_description WHERE objsubid = (SELECT ordinal_position FROM information_schema.columns WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'users' AND column_name = 'role') AND objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = 'users' AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA()))
+2023/03/14 18:52:55 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:34
+[0m[33m[0.000ms] [34;1m[rows:0][0m SELECT description FROM pg_catalog.pg_description WHERE objsubid = (SELECT ordinal_position FROM information_schema.columns WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'users' AND column_name = 'role') AND objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = 'users' AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA()))
 
-2023/03/07 14:54:00 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:35
-[0m[33m[1.201ms] [34;1m[rows:1][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'products' AND table_type = 'BASE TABLE'
+2023/03/14 18:52:55 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:35
+[0m[33m[0.546ms] [34;1m[rows:1][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'products' AND table_type = 'BASE TABLE'
 
-2023/03/07 14:54:00 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:35
-[0m[33m[0.523ms] [34;1m[rows:1][0m SELECT CURRENT_DATABASE()
+2023/03/14 18:52:55 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:35
+[0m[33m[0.181ms] [34;1m[rows:1][0m SELECT CURRENT_DATABASE()
 
-2023/03/07 14:54:00 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:35
-[0m[33m[7.877ms] [34;1m[rows:-][0m SELECT c.column_name, c.is_nullable = 'YES', c.udt_name, c.character_maximum_length, c.numeric_precision, c.numeric_precision_radix, c.numeric_scale, c.datetime_precision, 8 * typlen, c.column_default, pd.description, c.identity_increment FROM information_schema.columns AS c JOIN pg_type AS pgt ON c.udt_name = pgt.typname LEFT JOIN pg_catalog.pg_description as pd ON pd.objsubid = c.ordinal_position AND pd.objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = c.table_name AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = c.table_schema)) where table_catalog = 'oldegg' AND table_schema = CURRENT_SCHEMA() AND table_name = 'products'
+2023/03/14 18:52:55 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:35
+[0m[33m[4.561ms] [34;1m[rows:-][0m SELECT c.column_name, c.is_nullable = 'YES', c.udt_name, c.character_maximum_length, c.numeric_precision, c.numeric_precision_radix, c.numeric_scale, c.datetime_precision, 8 * typlen, c.column_default, pd.description, c.identity_increment FROM information_schema.columns AS c JOIN pg_type AS pgt ON c.udt_name = pgt.typname LEFT JOIN pg_catalog.pg_description as pd ON pd.objsubid = c.ordinal_position AND pd.objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = c.table_name AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = c.table_schema)) where table_catalog = 'oldegg' AND table_schema = CURRENT_SCHEMA() AND table_name = 'products'
 
-2023/03/07 14:54:00 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:35
-[0m[33m[8.909ms] [34;1m[rows:-][0m SELECT * FROM "products" LIMIT 1
+2023/03/14 18:52:55 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:35
+[0m[33m[1.647ms] [34;1m[rows:-][0m SELECT * FROM "products" LIMIT 1
 
-2023/03/07 14:54:00 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:35
-[0m[33m[11.599ms] [34;1m[rows:-][0m SELECT constraint_name FROM information_schema.table_constraints tc JOIN information_schema.constraint_column_usage AS ccu USING (constraint_schema, constraint_name) JOIN information_schema.columns AS c ON c.table_schema = tc.constraint_schema AND tc.table_name = c.table_name AND ccu.column_name = c.column_name WHERE constraint_type IN ('PRIMARY KEY', 'UNIQUE') AND c.table_catalog = 'oldegg' AND c.table_schema = CURRENT_SCHEMA() AND c.table_name = 'products' AND constraint_type = 'UNIQUE'
+2023/03/14 18:52:55 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:35
+[0m[33m[7.629ms] [34;1m[rows:-][0m SELECT constraint_name FROM information_schema.table_constraints tc JOIN information_schema.constraint_column_usage AS ccu USING (constraint_schema, constraint_name) JOIN information_schema.columns AS c ON c.table_schema = tc.constraint_schema AND tc.table_name = c.table_name AND ccu.column_name = c.column_name WHERE constraint_type IN ('PRIMARY KEY', 'UNIQUE') AND c.table_catalog = 'oldegg' AND c.table_schema = CURRENT_SCHEMA() AND c.table_name = 'products' AND constraint_type = 'UNIQUE'
 
-2023/03/07 14:54:00 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:35
-[0m[33m[9.871ms] [34;1m[rows:-][0m SELECT c.column_name, constraint_name, constraint_type FROM information_schema.table_constraints tc JOIN information_schema.constraint_column_usage AS ccu USING (constraint_schema, constraint_name) JOIN information_schema.columns AS c ON c.table_schema = tc.constraint_schema AND tc.table_name = c.table_name AND ccu.column_name = c.column_name WHERE constraint_type IN ('PRIMARY KEY', 'UNIQUE') AND c.table_catalog = 'oldegg' AND c.table_schema = CURRENT_SCHEMA() AND c.table_name = 'products'
+2023/03/14 18:52:55 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:35
+[0m[33m[8.251ms] [34;1m[rows:-][0m SELECT c.column_name, constraint_name, constraint_type FROM information_schema.table_constraints tc JOIN information_schema.constraint_column_usage AS ccu USING (constraint_schema, constraint_name) JOIN information_schema.columns AS c ON c.table_schema = tc.constraint_schema AND tc.table_name = c.table_name AND ccu.column_name = c.column_name WHERE constraint_type IN ('PRIMARY KEY', 'UNIQUE') AND c.table_catalog = 'oldegg' AND c.table_schema = CURRENT_SCHEMA() AND c.table_name = 'products'
 
-2023/03/07 14:54:00 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:35
-[0m[33m[0.558ms] [34;1m[rows:-][0m SELECT a.attname as column_name, format_type(a.atttypid, a.atttypmod) AS data_type
+2023/03/14 18:52:55 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:35
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT a.attname as column_name, format_type(a.atttypid, a.atttypmod) AS data_type
 		FROM pg_attribute a JOIN pg_class b ON a.attrelid = b.oid AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA())
 		WHERE a.attnum > 0 -- hide internal columns
 		AND NOT a.attisdropped -- hide deleted columns
 		AND b.relname = 'products'
 
-2023/03/07 14:54:00 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:35
-[0m[33m[0.621ms] [34;1m[rows:0][0m SELECT description FROM pg_catalog.pg_description WHERE objsubid = (SELECT ordinal_position FROM information_schema.columns WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'products' AND column_name = 'id') AND objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = 'products' AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA()))
+2023/03/14 18:52:55 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:35
+[0m[33m[0.000ms] [34;1m[rows:0][0m SELECT description FROM pg_catalog.pg_description WHERE objsubid = (SELECT ordinal_position FROM information_schema.columns WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'products' AND column_name = 'id') AND objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = 'products' AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA()))
 
-2023/03/07 14:54:00 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:35
-[0m[33m[0.067ms] [34;1m[rows:0][0m SELECT description FROM pg_catalog.pg_description WHERE objsubid = (SELECT ordinal_position FROM information_schema.columns WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'products' AND column_name = 'name') AND objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = 'products' AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA()))
+2023/03/14 18:52:55 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:35
+[0m[33m[0.567ms] [34;1m[rows:0][0m SELECT description FROM pg_catalog.pg_description WHERE objsubid = (SELECT ordinal_position FROM information_schema.columns WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'products' AND column_name = 'name') AND objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = 'products' AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA()))
 
-2023/03/07 14:54:00 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:35
+2023/03/14 18:52:55 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:35
 [0m[33m[0.000ms] [34;1m[rows:0][0m SELECT description FROM pg_catalog.pg_description WHERE objsubid = (SELECT ordinal_position FROM information_schema.columns WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'products' AND column_name = 'image') AND objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = 'products' AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA()))
 
-2023/03/07 14:54:00 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:35
-[0m[33m[0.541ms] [34;1m[rows:0][0m SELECT description FROM pg_catalog.pg_description WHERE objsubid = (SELECT ordinal_position FROM information_schema.columns WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'products' AND column_name = 'price') AND objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = 'products' AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA()))
+2023/03/14 18:52:55 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:35
+[0m[33m[0.520ms] [34;1m[rows:0][0m SELECT description FROM pg_catalog.pg_description WHERE objsubid = (SELECT ordinal_position FROM information_schema.columns WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'products' AND column_name = 'price') AND objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = 'products' AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA()))
 
-2023/03/07 14:54:00 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:35
-[0m[33m[0.667ms] [34;1m[rows:0][0m SELECT description FROM pg_catalog.pg_description WHERE objsubid = (SELECT ordinal_position FROM information_schema.columns WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'products' AND column_name = 'stock') AND objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = 'products' AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA()))
+2023/03/14 18:52:55 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:35
+[0m[33m[0.133ms] [34;1m[rows:0][0m SELECT description FROM pg_catalog.pg_description WHERE objsubid = (SELECT ordinal_position FROM information_schema.columns WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'products' AND column_name = 'stock') AND objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = 'products' AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA()))
 
-2023/03/07 14:54:00 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:35
-[0m[33m[0.728ms] [34;1m[rows:0][0m SELECT description FROM pg_catalog.pg_description WHERE objsubid = (SELECT ordinal_position FROM information_schema.columns WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'products' AND column_name = 'description') AND objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = 'products' AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA()))
+2023/03/14 18:52:55 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:35
+[0m[33m[0.519ms] [34;1m[rows:0][0m SELECT description FROM pg_catalog.pg_description WHERE objsubid = (SELECT ordinal_position FROM information_schema.columns WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'products' AND column_name = 'description') AND objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = 'products' AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA()))
 
-2023/03/07 16:21:27 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/service/user.go:48
-[0m[33m[119.968ms] [34;1m[rows:1][0m SELECT * FROM "users" WHERE email LIKE 'erikaoroh@gmail.com' LIMIT 1
+2023/03/14 18:52:55 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:36
+[0m[33m[0.545ms] [34;1m[rows:1][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'users' AND table_type = 'BASE TABLE'
 
-2023/03/07 16:23:25 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/service/user.go:48
-[0m[33m[105.665ms] [34;1m[rows:1][0m SELECT * FROM "users" WHERE email LIKE 'erikaoroh@gmail.com' LIMIT 1
+2023/03/14 18:52:55 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:36
+[0m[33m[0.226ms] [34;1m[rows:1][0m SELECT CURRENT_DATABASE()
 
-2023/03/07 16:23:26 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/graph/products.resolvers.go:97
-[0m[33m[63.843ms] [34;1m[rows:8][0m SELECT * FROM "products"
+2023/03/14 18:52:55 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:36
+[0m[33m[4.554ms] [34;1m[rows:-][0m SELECT c.column_name, c.is_nullable = 'YES', c.udt_name, c.character_maximum_length, c.numeric_precision, c.numeric_precision_radix, c.numeric_scale, c.datetime_precision, 8 * typlen, c.column_default, pd.description, c.identity_increment FROM information_schema.columns AS c JOIN pg_type AS pgt ON c.udt_name = pgt.typname LEFT JOIN pg_catalog.pg_description as pd ON pd.objsubid = c.ordinal_position AND pd.objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = c.table_name AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = c.table_schema)) where table_catalog = 'oldegg' AND table_schema = CURRENT_SCHEMA() AND table_name = 'users'
 
-2023/03/07 16:23:27 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/graph/products.resolvers.go:97
-[0m[33m[266.281ms] [34;1m[rows:8][0m SELECT * FROM "products"
+2023/03/14 18:52:55 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:36
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT * FROM "users" LIMIT 1
 
-2023/03/07 16:23:29 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/graph/products.resolvers.go:88
-[0m[33m[114.427ms] [34;1m[rows:1][0m SELECT * FROM "products" WHERE id = '38dced07-00e3-4923-a844-28a3fde03af0' LIMIT 1
+2023/03/14 18:52:55 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:36
+[0m[33m[8.061ms] [34;1m[rows:-][0m SELECT constraint_name FROM information_schema.table_constraints tc JOIN information_schema.constraint_column_usage AS ccu USING (constraint_schema, constraint_name) JOIN information_schema.columns AS c ON c.table_schema = tc.constraint_schema AND tc.table_name = c.table_name AND ccu.column_name = c.column_name WHERE constraint_type IN ('PRIMARY KEY', 'UNIQUE') AND c.table_catalog = 'oldegg' AND c.table_schema = CURRENT_SCHEMA() AND c.table_name = 'users' AND constraint_type = 'UNIQUE'
 
-2023/03/07 16:32:44 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/graph/products.resolvers.go:88
-[0m[33m[114.891ms] [34;1m[rows:1][0m SELECT * FROM "products" WHERE id = '38dced07-00e3-4923-a844-28a3fde03af0' LIMIT 1
+2023/03/14 18:52:55 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:36
+[0m[33m[8.088ms] [34;1m[rows:-][0m SELECT c.column_name, constraint_name, constraint_type FROM information_schema.table_constraints tc JOIN information_schema.constraint_column_usage AS ccu USING (constraint_schema, constraint_name) JOIN information_schema.columns AS c ON c.table_schema = tc.constraint_schema AND tc.table_name = c.table_name AND ccu.column_name = c.column_name WHERE constraint_type IN ('PRIMARY KEY', 'UNIQUE') AND c.table_catalog = 'oldegg' AND c.table_schema = CURRENT_SCHEMA() AND c.table_name = 'users'
 
-2023/03/07 16:32:47 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/graph/products.resolvers.go:88
-[0m[33m[164.921ms] [34;1m[rows:1][0m SELECT * FROM "products" WHERE id = '38dced07-00e3-4923-a844-28a3fde03af0' LIMIT 1
+2023/03/14 18:52:55 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:36
+[0m[33m[0.737ms] [34;1m[rows:-][0m SELECT a.attname as column_name, format_type(a.atttypid, a.atttypmod) AS data_type
+		FROM pg_attribute a JOIN pg_class b ON a.attrelid = b.oid AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA())
+		WHERE a.attnum > 0 -- hide internal columns
+		AND NOT a.attisdropped -- hide deleted columns
+		AND b.relname = 'users'
 
-2023/03/07 16:32:55 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/graph/products.resolvers.go:88
-[0m[33m[101.115ms] [34;1m[rows:1][0m SELECT * FROM "products" WHERE id = '38dced07-00e3-4923-a844-28a3fde03af0' LIMIT 1
+2023/03/14 18:52:55 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:36
+[0m[33m[0.520ms] [34;1m[rows:0][0m SELECT description FROM pg_catalog.pg_description WHERE objsubid = (SELECT ordinal_position FROM information_schema.columns WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'users' AND column_name = 'id') AND objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = 'users' AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA()))
 
-2023/03/07 16:33:01 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/graph/products.resolvers.go:88
-[0m[33m[108.831ms] [34;1m[rows:1][0m SELECT * FROM "products" WHERE id = '38dced07-00e3-4923-a844-28a3fde03af0' LIMIT 1
+2023/03/14 18:52:55 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:36
+[0m[33m[0.000ms] [34;1m[rows:0][0m SELECT description FROM pg_catalog.pg_description WHERE objsubid = (SELECT ordinal_position FROM information_schema.columns WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'users' AND column_name = 'name') AND objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = 'users' AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA()))
 
-2023/03/07 16:33:03 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/graph/products.resolvers.go:88
-[0m[33m[107.069ms] [34;1m[rows:1][0m SELECT * FROM "products" WHERE id = '38dced07-00e3-4923-a844-28a3fde03af0' LIMIT 1
+2023/03/14 18:52:55 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:36
+[0m[33m[0.571ms] [34;1m[rows:0][0m SELECT description FROM pg_catalog.pg_description WHERE objsubid = (SELECT ordinal_position FROM information_schema.columns WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'users' AND column_name = 'email') AND objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = 'users' AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA()))
 
-2023/03/07 16:33:05 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/graph/products.resolvers.go:88
-[0m[33m[103.963ms] [34;1m[rows:1][0m SELECT * FROM "products" WHERE id = '38dced07-00e3-4923-a844-28a3fde03af0' LIMIT 1
+2023/03/14 18:52:55 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:36
+[0m[33m[0.276ms] [34;1m[rows:0][0m SELECT description FROM pg_catalog.pg_description WHERE objsubid = (SELECT ordinal_position FROM information_schema.columns WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'users' AND column_name = 'phone') AND objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = 'users' AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA()))
 
-2023/03/07 16:34:32 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/graph/products.resolvers.go:88
-[0m[33m[119.898ms] [34;1m[rows:1][0m SELECT * FROM "products" WHERE id = '38dced07-00e3-4923-a844-28a3fde03af0' LIMIT 1
+2023/03/14 18:52:55 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:36
+[0m[33m[0.000ms] [34;1m[rows:0][0m SELECT description FROM pg_catalog.pg_description WHERE objsubid = (SELECT ordinal_position FROM information_schema.columns WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'users' AND column_name = 'password') AND objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = 'users' AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA()))
 
-2023/03/07 16:34:34 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/graph/products.resolvers.go:88
-[0m[33m[122.428ms] [34;1m[rows:1][0m SELECT * FROM "products" WHERE id = '38dced07-00e3-4923-a844-28a3fde03af0' LIMIT 1
+2023/03/14 18:52:55 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:36
+[0m[33m[0.519ms] [34;1m[rows:0][0m SELECT description FROM pg_catalog.pg_description WHERE objsubid = (SELECT ordinal_position FROM information_schema.columns WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'users' AND column_name = 'banned') AND objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = 'users' AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA()))
 
-2023/03/07 16:34:41 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/graph/products.resolvers.go:88
-[0m[33m[105.341ms] [34;1m[rows:1][0m SELECT * FROM "products" WHERE id = '38dced07-00e3-4923-a844-28a3fde03af0' LIMIT 1
+2023/03/14 18:52:55 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:36
+[0m[33m[0.127ms] [34;1m[rows:0][0m SELECT description FROM pg_catalog.pg_description WHERE objsubid = (SELECT ordinal_position FROM information_schema.columns WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'users' AND column_name = 'role') AND objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = 'users' AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA()))
 
-2023/03/07 16:34:49 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/graph/products.resolvers.go:88
-[0m[33m[119.487ms] [34;1m[rows:1][0m SELECT * FROM "products" WHERE id = '38dced07-00e3-4923-a844-28a3fde03af0' LIMIT 1
+2023/03/14 18:52:55 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:36
+[0m[33m[1.049ms] [34;1m[rows:1][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'products' AND table_type = 'BASE TABLE'
 
-2023/03/07 16:34:51 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/graph/products.resolvers.go:88
-[0m[33m[110.638ms] [34;1m[rows:1][0m SELECT * FROM "products" WHERE id = '38dced07-00e3-4923-a844-28a3fde03af0' LIMIT 1
+2023/03/14 18:52:55 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:36
+[0m[33m[0.116ms] [34;1m[rows:1][0m SELECT CURRENT_DATABASE()
 
-2023/03/07 16:36:28 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/graph/products.resolvers.go:88
-[0m[33m[103.393ms] [34;1m[rows:1][0m SELECT * FROM "products" WHERE id = '38dced07-00e3-4923-a844-28a3fde03af0' LIMIT 1
+2023/03/14 18:52:55 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:36
+[0m[33m[4.528ms] [34;1m[rows:-][0m SELECT c.column_name, c.is_nullable = 'YES', c.udt_name, c.character_maximum_length, c.numeric_precision, c.numeric_precision_radix, c.numeric_scale, c.datetime_precision, 8 * typlen, c.column_default, pd.description, c.identity_increment FROM information_schema.columns AS c JOIN pg_type AS pgt ON c.udt_name = pgt.typname LEFT JOIN pg_catalog.pg_description as pd ON pd.objsubid = c.ordinal_position AND pd.objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = c.table_name AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = c.table_schema)) where table_catalog = 'oldegg' AND table_schema = CURRENT_SCHEMA() AND table_name = 'products'
 
-2023/03/07 16:36:32 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/graph/products.resolvers.go:88
-[0m[33m[101.451ms] [34;1m[rows:1][0m SELECT * FROM "products" WHERE id = '38dced07-00e3-4923-a844-28a3fde03af0' LIMIT 1
+2023/03/14 18:52:55 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:36
+[0m[33m[1.141ms] [34;1m[rows:-][0m SELECT * FROM "products" LIMIT 1
 
-2023/03/07 16:46:25 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/graph/products.resolvers.go:88
-[0m[33m[112.876ms] [34;1m[rows:1][0m SELECT * FROM "products" WHERE id = '38dced07-00e3-4923-a844-28a3fde03af0' LIMIT 1
+2023/03/14 18:52:55 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:36
+[0m[33m[7.578ms] [34;1m[rows:-][0m SELECT constraint_name FROM information_schema.table_constraints tc JOIN information_schema.constraint_column_usage AS ccu USING (constraint_schema, constraint_name) JOIN information_schema.columns AS c ON c.table_schema = tc.constraint_schema AND tc.table_name = c.table_name AND ccu.column_name = c.column_name WHERE constraint_type IN ('PRIMARY KEY', 'UNIQUE') AND c.table_catalog = 'oldegg' AND c.table_schema = CURRENT_SCHEMA() AND c.table_name = 'products' AND constraint_type = 'UNIQUE'
 
-2023/03/07 16:46:34 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/graph/products.resolvers.go:88
-[0m[33m[108.759ms] [34;1m[rows:1][0m SELECT * FROM "products" WHERE id = '38dced07-00e3-4923-a844-28a3fde03af0' LIMIT 1
+2023/03/14 18:52:55 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:36
+[0m[33m[8.095ms] [34;1m[rows:-][0m SELECT c.column_name, constraint_name, constraint_type FROM information_schema.table_constraints tc JOIN information_schema.constraint_column_usage AS ccu USING (constraint_schema, constraint_name) JOIN information_schema.columns AS c ON c.table_schema = tc.constraint_schema AND tc.table_name = c.table_name AND ccu.column_name = c.column_name WHERE constraint_type IN ('PRIMARY KEY', 'UNIQUE') AND c.table_catalog = 'oldegg' AND c.table_schema = CURRENT_SCHEMA() AND c.table_name = 'products'
 
-2023/03/07 16:46:54 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/graph/products.resolvers.go:88
-[0m[33m[125.598ms] [34;1m[rows:1][0m SELECT * FROM "products" WHERE id = '38dced07-00e3-4923-a844-28a3fde03af0' LIMIT 1
+2023/03/14 18:52:55 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:36
+[0m[33m[0.669ms] [34;1m[rows:-][0m SELECT a.attname as column_name, format_type(a.atttypid, a.atttypmod) AS data_type
+		FROM pg_attribute a JOIN pg_class b ON a.attrelid = b.oid AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA())
+		WHERE a.attnum > 0 -- hide internal columns
+		AND NOT a.attisdropped -- hide deleted columns
+		AND b.relname = 'products'
 
-2023/03/07 16:46:57 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/graph/products.resolvers.go:88
-[0m[33m[110.736ms] [34;1m[rows:1][0m SELECT * FROM "products" WHERE id = '38dced07-00e3-4923-a844-28a3fde03af0' LIMIT 1
+2023/03/14 18:52:55 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:36
+[0m[33m[0.520ms] [34;1m[rows:0][0m SELECT description FROM pg_catalog.pg_description WHERE objsubid = (SELECT ordinal_position FROM information_schema.columns WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'products' AND column_name = 'id') AND objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = 'products' AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA()))
 
-2023/03/07 16:48:19 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/graph/products.resolvers.go:88
-[0m[33m[115.462ms] [34;1m[rows:1][0m SELECT * FROM "products" WHERE id = '38dced07-00e3-4923-a844-28a3fde03af0' LIMIT 1
+2023/03/14 18:52:55 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:36
+[0m[33m[0.000ms] [34;1m[rows:0][0m SELECT description FROM pg_catalog.pg_description WHERE objsubid = (SELECT ordinal_position FROM information_schema.columns WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'products' AND column_name = 'name') AND objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = 'products' AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA()))
 
-2023/03/07 16:49:49 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/graph/products.resolvers.go:88
-[0m[33m[106.191ms] [34;1m[rows:1][0m SELECT * FROM "products" WHERE id = '38dced07-00e3-4923-a844-28a3fde03af0' LIMIT 1
+2023/03/14 18:52:55 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:36
+[0m[33m[0.564ms] [34;1m[rows:0][0m SELECT description FROM pg_catalog.pg_description WHERE objsubid = (SELECT ordinal_position FROM information_schema.columns WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'products' AND column_name = 'image') AND objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = 'products' AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA()))
 
-2023/03/07 16:49:51 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/graph/products.resolvers.go:88
-[0m[33m[112.722ms] [34;1m[rows:1][0m SELECT * FROM "products" WHERE id = '38dced07-00e3-4923-a844-28a3fde03af0' LIMIT 1
+2023/03/14 18:52:55 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:36
+[0m[33m[0.245ms] [34;1m[rows:0][0m SELECT description FROM pg_catalog.pg_description WHERE objsubid = (SELECT ordinal_position FROM information_schema.columns WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'products' AND column_name = 'price') AND objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = 'products' AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA()))
 
-2023/03/07 16:53:43 [31;1mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/service/user.go:48 [35;1mrecord not found
-[0m[33m[107.077ms] [34;1m[rows:0][0m SELECT * FROM "users" WHERE email LIKE '' LIMIT 1
+2023/03/14 18:52:55 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:36
+[0m[33m[0.519ms] [34;1m[rows:0][0m SELECT description FROM pg_catalog.pg_description WHERE objsubid = (SELECT ordinal_position FROM information_schema.columns WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'products' AND column_name = 'stock') AND objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = 'products' AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA()))
 
-2023/03/07 16:53:58 [31;1mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/service/user.go:48 [35;1mrecord not found
-[0m[33m[114.436ms] [34;1m[rows:0][0m SELECT * FROM "users" WHERE email LIKE 'erikaoroh@binus.ac.id' LIMIT 1
+2023/03/14 18:52:55 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:36
+[0m[33m[0.000ms] [34;1m[rows:0][0m SELECT description FROM pg_catalog.pg_description WHERE objsubid = (SELECT ordinal_position FROM information_schema.columns WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'products' AND column_name = 'description') AND objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = 'products' AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA()))
 
-2023/03/07 16:54:09 [31;1mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/service/user.go:48 [35;1mrecord not found
-[0m[33m[113.314ms] [34;1m[rows:0][0m SELECT * FROM "users" WHERE email LIKE 'erikaoroh@binus.ac.id' LIMIT 1
+2023/03/14 18:52:55 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:36
+[0m[33m[0.546ms] [34;1m[rows:1][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'carts' AND table_type = 'BASE TABLE'
 
-2023/03/07 16:55:09 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/service/user.go:48
-[0m[33m[107.679ms] [34;1m[rows:1][0m SELECT * FROM "users" WHERE email LIKE 'erikaoroh@gmail.com' LIMIT 1
+2023/03/14 18:52:55 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:36
+[0m[33m[0.423ms] [34;1m[rows:1][0m SELECT CURRENT_DATABASE()
 
-2023/03/07 16:55:11 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/service/user.go:48
-[0m[33m[103.003ms] [34;1m[rows:1][0m SELECT * FROM "users" WHERE email LIKE 'erikaoroh@gmail.com' LIMIT 1
+2023/03/14 18:52:55 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:36
+[0m[33m[5.273ms] [34;1m[rows:-][0m SELECT c.column_name, c.is_nullable = 'YES', c.udt_name, c.character_maximum_length, c.numeric_precision, c.numeric_precision_radix, c.numeric_scale, c.datetime_precision, 8 * typlen, c.column_default, pd.description, c.identity_increment FROM information_schema.columns AS c JOIN pg_type AS pgt ON c.udt_name = pgt.typname LEFT JOIN pg_catalog.pg_description as pd ON pd.objsubid = c.ordinal_position AND pd.objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = c.table_name AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = c.table_schema)) where table_catalog = 'oldegg' AND table_schema = CURRENT_SCHEMA() AND table_name = 'carts'
 
-2023/03/07 16:55:11 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/service/user.go:48
-[0m[33m[1.040ms] [34;1m[rows:1][0m SELECT * FROM "users" WHERE email LIKE 'erikaoroh@gmail.com' LIMIT 1
+2023/03/14 18:52:55 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:36
+[0m[33m[1.504ms] [34;1m[rows:-][0m SELECT * FROM "carts" LIMIT 1
 
-2023/03/07 16:55:18 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/service/user.go:48
-[0m[33m[109.914ms] [34;1m[rows:1][0m SELECT * FROM "users" WHERE email LIKE 'erikaoroh@gmail.com' LIMIT 1
+2023/03/14 18:52:55 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:36
+[0m[33m[7.948ms] [34;1m[rows:-][0m SELECT constraint_name FROM information_schema.table_constraints tc JOIN information_schema.constraint_column_usage AS ccu USING (constraint_schema, constraint_name) JOIN information_schema.columns AS c ON c.table_schema = tc.constraint_schema AND tc.table_name = c.table_name AND ccu.column_name = c.column_name WHERE constraint_type IN ('PRIMARY KEY', 'UNIQUE') AND c.table_catalog = 'oldegg' AND c.table_schema = CURRENT_SCHEMA() AND c.table_name = 'carts' AND constraint_type = 'UNIQUE'
 
-2023/03/07 16:55:19 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/graph/products.resolvers.go:97
-[0m[33m[104.698ms] [34;1m[rows:8][0m SELECT * FROM "products"
+2023/03/14 18:52:55 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:36
+[0m[33m[7.505ms] [34;1m[rows:-][0m SELECT c.column_name, constraint_name, constraint_type FROM information_schema.table_constraints tc JOIN information_schema.constraint_column_usage AS ccu USING (constraint_schema, constraint_name) JOIN information_schema.columns AS c ON c.table_schema = tc.constraint_schema AND tc.table_name = c.table_name AND ccu.column_name = c.column_name WHERE constraint_type IN ('PRIMARY KEY', 'UNIQUE') AND c.table_catalog = 'oldegg' AND c.table_schema = CURRENT_SCHEMA() AND c.table_name = 'carts'
 
-2023/03/07 16:55:19 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/graph/products.resolvers.go:97
-[0m[33m[102.070ms] [34;1m[rows:8][0m SELECT * FROM "products"
+2023/03/14 18:52:55 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:36
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT a.attname as column_name, format_type(a.atttypid, a.atttypmod) AS data_type
+		FROM pg_attribute a JOIN pg_class b ON a.attrelid = b.oid AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA())
+		WHERE a.attnum > 0 -- hide internal columns
+		AND NOT a.attisdropped -- hide deleted columns
+		AND b.relname = 'carts'
 
-2023/03/07 16:55:23 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/graph/products.resolvers.go:88
-[0m[33m[103.452ms] [34;1m[rows:1][0m SELECT * FROM "products" WHERE id = 'a32c9708-bf85-45f5-a098-58fb2679291d' LIMIT 1
+2023/03/14 18:52:55 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:36
+[0m[33m[0.000ms] [34;1m[rows:0][0m SELECT description FROM pg_catalog.pg_description WHERE objsubid = (SELECT ordinal_position FROM information_schema.columns WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'carts' AND column_name = 'user_id') AND objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = 'carts' AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA()))
 
-2023/03/07 16:56:57 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/graph/products.resolvers.go:88
-[0m[33m[111.112ms] [34;1m[rows:1][0m SELECT * FROM "products" WHERE id = 'a32c9708-bf85-45f5-a098-58fb2679291d' LIMIT 1
+2023/03/14 18:52:55 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:36
+[0m[33m[0.514ms] [34;1m[rows:0][0m SELECT description FROM pg_catalog.pg_description WHERE objsubid = (SELECT ordinal_position FROM information_schema.columns WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'carts' AND column_name = 'product_id') AND objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = 'carts' AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA()))
 
-2023/03/07 16:57:05 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/graph/products.resolvers.go:88
-[0m[33m[119.307ms] [34;1m[rows:1][0m SELECT * FROM "products" WHERE id = 'a32c9708-bf85-45f5-a098-58fb2679291d' LIMIT 1
+2023/03/14 18:52:55 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:36
+[0m[33m[0.000ms] [34;1m[rows:0][0m SELECT description FROM pg_catalog.pg_description WHERE objsubid = (SELECT ordinal_position FROM information_schema.columns WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'carts' AND column_name = 'quantity') AND objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = 'carts' AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA()))
 
-2023/03/07 16:57:13 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/graph/products.resolvers.go:88
-[0m[33m[109.165ms] [34;1m[rows:1][0m SELECT * FROM "products" WHERE id = 'a32c9708-bf85-45f5-a098-58fb2679291d' LIMIT 1
+2023/03/14 18:52:55 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:36
+[0m[33m[0.503ms] [34;1m[rows:0][0m SELECT description FROM pg_catalog.pg_description WHERE objsubid = (SELECT ordinal_position FROM information_schema.columns WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'carts' AND column_name = 'notes') AND objoid = (SELECT oid FROM pg_catalog.pg_class WHERE relname = 'carts' AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = CURRENT_SCHEMA()))
 
-2023/03/07 16:57:15 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/graph/products.resolvers.go:88
-[0m[33m[116.599ms] [34;1m[rows:1][0m SELECT * FROM "products" WHERE id = 'a32c9708-bf85-45f5-a098-58fb2679291d' LIMIT 1
+2023/03/14 18:52:55 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:36
+[0m[33m[0.502ms] [34;1m[rows:1][0m SELECT count(*) FROM INFORMATION_SCHEMA.table_constraints WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'carts' AND constraint_name = 'fk_carts_product'
+
+2023/03/14 18:52:55 [32mD:/01. ASLAB 22-2/TPA WEB/TPA-WEB-ERIKA/BackEnd/server/server.go:36
+[0m[33m[1.501ms] [34;1m[rows:1][0m SELECT count(*) FROM INFORMATION_SCHEMA.table_constraints WHERE table_schema = CURRENT_SCHEMA() AND table_name = 'carts' AND constraint_name = 'fk_carts_user'

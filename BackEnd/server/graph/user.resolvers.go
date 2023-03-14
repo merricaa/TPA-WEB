@@ -6,15 +6,29 @@ package graph
 
 import (
 	"context"
+	"fmt"
 
 	"github.com/google/uuid"
 	"github.com/jxsr12/oldegg/config"
 	"github.com/jxsr12/oldegg/graph/model"
 	"github.com/jxsr12/oldegg/service"
+	"github.com/vektah/gqlparser/v2/gqlerror"
 )
 
 // Login is the resolver for the login field.
 func (r *authOpsResolver) Login(ctx context.Context, obj *model.AuthOps, email string, password string) (interface{}, error) {
+	// user := new(model.User)
+	// db:=config.GetDB()
+	// err := db.First(&user, "email = ?", email).Error
+	// if err != nil {
+	// 	return nil, err
+	// }
+
+	// if err = model.ComparePassword( user.Password,password); err !=nil {
+	// 	return user, err
+	// }
+
+	// return nil, nil
 	return service.UserLogin(ctx, email, password)
 }
 
@@ -54,6 +68,22 @@ func (r *mutationResolver) CreateUser(ctx context.Context, input model.NewUser) 
 // User is the resolver for the user field.
 func (r *queryResolver) User(ctx context.Context, id string) (*model.User, error) {
 	return service.UserGetByID(ctx, id)
+}
+
+// GetCurrentUser is the resolver for the getCurrentUser field.
+func (r *queryResolver) GetCurrentUser(ctx context.Context) (*model.User, error) {
+	// panic(fmt.Errorf("not implemented: GetCurrentUser - getCurrentUser"))
+	db := config.GetDB()
+	if ctx.Value("auth") == nil {
+		return nil, &gqlerror.Error{
+			Message: fmt.Sprintf("%+v\n", ctx),
+		}
+	}
+	userID := ctx.Value("auth").(*service.JwtCustomClaim).ID
+
+	user := new(model.User)
+
+	return user, db.Where("id = ?", userID).Take(&user).Error
 }
 
 // Protected is the resolver for the protected field.

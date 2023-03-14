@@ -2,15 +2,18 @@ import styles from '@/styles/Home.module.css';
 import ImageSlider, { ImageType } from './imageSlider';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
-
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { getCookie } from 'cookies-next';
+import Navbar from './navbar';
+import Footer from './footer';
 
 const ProductList = () => {};
 
 export default function home() {
   const [images, setImages] = useState<ImageType[]>();
   const [products, setProducts] = useState<any[]>([]);
+  const [user, setCurrentUser] = useState<any[]>([]);
+  const token = getCookie('token');
 
   useEffect(() => {
     setImages([
@@ -49,6 +52,38 @@ export default function home() {
       });
   }, []);
 
+  //getCurrent User
+  // useEffect(() => {
+  //   const currUserQuery = `query getCurrentUser{
+  //     getCurrentUser{
+  //       name, id,
+  //     }
+  //   }`;
+  //   axios
+  //     .post(
+  //       'http://localhost:8080/query',
+  //       {
+  //         query: currUserQuery,
+  //         // variables: variables,
+  //       },
+  //       {
+  //         headers: {
+  //           Authorization: `Bearer ${token}`,
+  //         },
+  //       },
+  //     )
+  //     .then((response) => {
+  //       console.log(response);
+  //       // setProducts(response.data.data.products);
+  //       setCurrentUser(response.data.data.getCurrentUser);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //       // console.log(variables);
+  //       console.log('test');
+  //     });
+  // }, []);
+
   if (products.length == 0) {
     return <div>Loading</div>;
   }
@@ -58,32 +93,8 @@ export default function home() {
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
       ></link>
-      <div className={styles.navbar}>
-        <img src="/Assets/hammenu.png" alt="" className={styles.hamMenu} />
-        <img src="/logo.svg" alt="" className={styles.logoNav} />
-        <div>
-          <img src="/Assets/location.png" alt="" className={styles.location} />
-          <a href="" className={styles.deliver}>
-            Deliver
-          </a>
-        </div>
-        <input type="text" placeholder="search" className={styles.searchBar} />
-        <img src="/Assests/user.png" alt="" />
-        <img src="/Assets/uk.png" alt="" className={styles.uk} />/
-        <div className={styles.homeSignIn}>
-          <img src="/Assets/user.png" alt="" className={styles.uk} />
-          <a href="/" className={styles.signUpBTN}>
-            Sign In / Register
-          </a>
-        </div>
-        <div className={styles.homeOrder}>
-          <a href="" className={styles.return}>
-            Return & Order
-          </a>
-        </div>
-        <img src="/Assets/cart.png" alt="" className={styles.location} />
-      </div>
       <div className="body">
+        <Navbar />
         <ImageSlider images={images}></ImageSlider>
       </div>
       <div className={styles.cardContainer}>
@@ -108,6 +119,7 @@ export default function home() {
           );
         })}
       </div>
+      <Footer />
     </div>
   );
 }

@@ -2,6 +2,8 @@ import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import styles from '@/styles/Detail.module.css';
+import Navbar from './../../navbar';
+import Footer from '@/pages/footer';
 
 interface Product {
   id: string;
@@ -51,18 +53,20 @@ const ProductDetail = () => {
 
   return (
     <div className={styles.container}>
+      <Navbar />
       <div className={styles.div1}>
         <img src={products?.image} alt="" className={styles.productImage} />
       </div>
       <div className={styles.div2}>
-        <h1>test</h1>
-
-      </div>
-      <div className={styles.div3}>
         <h1 className={styles.productName}>{products?.name}</h1>
         <h3 className={styles.productPrice}>${products?.price}</h3>
       </div>
+      <div className={styles.div3}>
+        <input type="text" value="1" maxLength={3}  className={styles.qtyBTN}/>
+        <button className={styles.atcBTN}>Add to cart</button>
+      </div>
       {/* <p>{id}</p> */}
+      <Footer />
     </div>
   );
 };

@@ -8,35 +8,58 @@
 
 
 .div1{
-background-color: brown;
+background-color: white;
 float: left;
-width: 33.3%;
+width:33.33%;
+/* align-items: center; */
 
 
 }
 .div2{
-background-color: blueviolet;
-margin: 0;
-width: 33.3%;
+background-color: white;
+margin: 0 auto;
+width: 23.33%;
+/* height: 100vw; */
+/* height: 50%; */
 
 }
 .div3{
 
-  background-color: cadetblue;
+  background-color: white;
   float: right;
-  width: 33.3%;
+  width: 23.33%;
+  /* height: 100vw; */
 
 
 
+}
+.productImage{
+  width: 50%;
 }
 
 .productName{
   color: black;
+  font-size: 15px;
 }
-.productImage{
 
-  width: 80%;
-}
 .productPrice{
   color: black;
+}
+
+/* quantity  */
+.qtyBTN{
+  padding: 10px 8px;
+  border: 0;
+  width: 24px;
+  font-size: 12px;
+  background: white;
+  border: 2px solid black;
+  color: black;
+}
+
+.atcBTN{
+  background-color: #ffa33a;;
+  border-color: #c60;;
+  padding: 10px 14px;
+
 }

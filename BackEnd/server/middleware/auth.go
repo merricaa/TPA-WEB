@@ -7,8 +7,6 @@ import (
 	"github.com/jxsr12/oldegg/service"
 )
 
-type authString string
-
 func AuthMiddleware(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		auth := r.Header.Get("Authorization")
@@ -29,7 +27,7 @@ func AuthMiddleware(next http.Handler) http.Handler {
 
 		customClaim, _ := validate.Claims.(*service.JwtCustomClaim)
 
-		ctx := context.WithValue(r.Context(), authString("auth"), customClaim)
+		ctx := context.WithValue(r.Context(), "auth", customClaim)
 
 		r = r.WithContext(ctx)
 		next.ServeHTTP(w, r)
@@ -37,6 +35,6 @@ func AuthMiddleware(next http.Handler) http.Handler {
 }
 
 func CtxValue(ctx context.Context) *service.JwtCustomClaim {
-	raw, _ := ctx.Value(authString("auth")).(*service.JwtCustomClaim)
+	raw, _ := ctx.Value("auth").(*service.JwtCustomClaim)
 	return raw
 }

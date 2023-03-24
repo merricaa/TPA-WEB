@@ -4,6 +4,8 @@ import axios from 'axios';
 import styles from '@/styles/Detail.module.css';
 import Navbar from './../../navbar';
 import Footer from '@/pages/footer';
+import { getCookie } from 'cookies-next';
+import createCart from './../../cart';
 
 interface Product {
   id: string;
@@ -18,6 +20,8 @@ const ProductDetail = () => {
   const router = useRouter();
   const [products, setProducts] = useState<Product | null>(null);
   const { id } = router.query;
+  const [cart, setCart] = useState<any[]>([]);
+  const token = getCookie('token');
 
   useEffect(() => {
     axios
@@ -40,16 +44,62 @@ const ProductDetail = () => {
 
   const query = `query($id:ID!){
     product(id:$id){
-      id
-      name
-      image
-      description
-      price
-      stock
-      price
-      stock
+      id,
+      name,
+      image,
+      description,
+      price,
+      stock,
+      price,
+      stock,
     }
   }`;
+
+  const handleAddToCart = () => {
+    const variables = {
+      productID: id,
+      quantity: (document.getElementById('quantity') as HTMLInputElement).value,
+      notes: '',
+    };
+
+    const cartQuery = `mutation addToCart($productID:ID!, $quantity: Int!, $notes: String!){
+      createCart(productID: $productID, quantity: $quantity, notes:$notes){
+
+      product{
+        name,
+        image,
+        price,
+        id
+      }
+        quantity,
+        notes
+
+      }
+    }`;
+
+    axios
+      .post(
+        'http://localhost:8080/query',
+        {
+          query: cartQuery,
+          variables: variables,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        },
+      )
+      .then((response) => {
+        console.log(response);
+        setCart(response.data.data.createCart);
+      })
+      .catch((error) => {
+        console.log(error);
+        // console.log(variables);
+        console.log('test');
+      });
+  };
 
   return (
     <div className={styles.container}>
@@ -62,11 +112,23 @@ const ProductDetail = () => {
         <h3 className={styles.productPrice}>${products?.price}</h3>
       </div>
       <div className={styles.div3}>
-        <input type="text" value="1" maxLength={3}  className={styles.qtyBTN}/>
-        <button className={styles.atcBTN}>Add to cart</button>
+        <div className={styles.qtyBox}>
+          <input
+            type="number"
+            defaultValue={1}
+            maxLength={3}
+            min={0}
+            className={styles.qtyBTN}
+            id="quantity"
+          ></input>
+        </div>
+
+        <button className={styles.atcBTN} onClick={handleAddToCart}>
+          Add to cart
+        </button>
       </div>
       {/* <p>{id}</p> */}
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

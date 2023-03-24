@@ -40,12 +40,13 @@ func (r *mutationResolver) CreateCart(ctx context.Context, productID string, qua
 	userID := ctx.Value("auth").(*service.JwtCustomClaim).ID
 
 	cart, _ := service.CartGetByUserProduct(ctx, userID, productID)
+	db := config.GetDB()
 
 	if cart != nil {
 		cart.Quantity += quantity
 		cart.Notes = notes
 
-		return cart, r.DB.Save(cart).Error
+		return cart, db.Save(cart).Error
 	}
 	return service.CartCreate(ctx, userID, productID, quantity, notes)
 }
